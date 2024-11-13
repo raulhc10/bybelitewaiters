@@ -1,4 +1,3 @@
-
 /* Reseteo de márgenes y padding */
 * {
     margin: 0;
@@ -68,7 +67,7 @@ body {
     list-style: none;
 }
 
-.navbar u1 {
+.navbar ul {
     display: flex;
 }
 
@@ -92,7 +91,26 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 768px) {
-    .navbar u1 {
+    /* Estilos para pantallas pequeñas */
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .menu {
+        display: none; /* Oculta el menú principal en pantallas pequeñas */
+    }
+
+    .menu-icono {
+        display: block; /* Muestra el icono del menú */
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .navbar ul {
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -102,19 +120,22 @@ input[type="checkbox"] {
         display: none;
     }
 
-    .navbar u1 li {
+    .navbar ul li {
         text-align: center;
         margin: 1rem 0;
     }
 
-    input[type="checkbox"]:checked ~ .navbar u1 {
+    input[type="checkbox"]:checked ~ .navbar ul {
         display: flex;
     }
 
-    .menu-icono {
-        display: inline;
-        width: 30px;
-        cursor: pointer;
+    /* Adaptación de Sección de Servicios y Producto */
+    .info-servicios, .info-producto {
+        flex-direction: column;
+    }
+
+    .servicios-left, .producto-left, .servicios-right, .producto-right {
+        flex: 1 1 100%; /* Las columnas se apilan */
     }
 }
 
@@ -196,3 +217,16 @@ p {
 .contacto-txt a:hover {
     color: #fff;
 }
+
+@media (max-width: 768px) {
+    /* Ajuste del pie de página en móviles */
+    .footer h2 {
+        font-size: 1.5rem;
+    }
+
+    .contacto-txt {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
